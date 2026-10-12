@@ -1,0 +1,7 @@
+audit:
+  enabled: true
+  include-player-uuid: true
+  include-ip-address: false
+  retention-days: 14
+  access-role: network-operators
+  redact-before-export: true

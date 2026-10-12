@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Minecraft proxy session event",
+  "type": "object",
+  "required": ["event", "occurredAt", "proxy", "correlationId"],
+  "properties": {
+    "event": {"enum": ["session.connected", "session.transferred", "session.disconnected", "session.rejected"]},
+    "occurredAt": {"type": "string", "format": "date-time"},
+    "playerId": {"type": "string", "format": "uuid"},
+    "proxy": {"type": "string", "minLength": 1, "maxLength": 64},
+    "backend": {"type": ["string", "null"], "maxLength": 64},
+    "correlationId": {"type": "string", "maxLength": 128},
+    "reasonCode": {"type": ["string", "null"], "maxLength": 64}
+  },
+  "additionalProperties": false
+}
